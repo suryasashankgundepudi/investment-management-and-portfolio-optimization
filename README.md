@@ -1,6 +1,6 @@
 # Investment Management and Portfolio Optimization using R Programming
 
-[](https://g.foolcdn.com/editorial/images/618711/arrow-angles-up-on-a-green-stock-chart.jpg)
+![](https://g.foolcdn.com/editorial/images/618711/arrow-angles-up-on-a-green-stock-chart.jpg)
 
 The application is hosted on ShinyApps.io and can be found [HERE](https://gv9wj.shinyapps.io/Risk-Management-and-Portfolio-Optimization/)
 
