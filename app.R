@@ -22,8 +22,6 @@ library(ROI.plugin.quadprog)
 # Define UI for application that gives the risk profile, portfolio and correlation
 ui <- fluidPage(
 
-
-    
     #fluid page scales the components to fit on all browsers
     
     #Header panel 
@@ -31,6 +29,7 @@ ui <- fluidPage(
                    style="color:black"),
                 
                 list(tags$head(tags$style("body {background-color: #ADD8E6 ;}")))),
+    
     
     #layout
     sidebarLayout(
@@ -44,13 +43,13 @@ ui <- fluidPage(
             
             submitButton("Submit"),
             
-            p("Kindly seperate stock tickers with space")
+            p("Kindly seperate stock tickers with space ")
         ),
-        mainPanel(#poistion="right",
+        mainPanel(
             
             tabsetPanel(type="tab",
                         
-                        tabPanel("Risk over time",
+                        tabPanel("Risk over past 10 years",
                                  
                                  
                                  plotOutput("p1"),
@@ -61,8 +60,7 @@ ui <- fluidPage(
                                  p("Kurtosis"),
                                  verbatimTextOutput("kurt"),
                                  p("Value at Risk"),
-                                 verbatimTextOutput("var"),
-                               
+                                 verbatimTextOutput("var")
                         ),
                         
                         tabPanel("Suggested Portfolio based on past data",
@@ -89,36 +87,35 @@ ui <- fluidPage(
     
 )
 
+
 # Define server logic required to draw a histogram
 server <- function(input,output){
     
     #getting returns for the stocks 
     df <- reactive({
         
-        # Using text input seperated by space for ticker valuje
-        ticker <- unlist(strsplit(x = input$ticker, split =  " "))
+        # Using text input separated by space for ticker value
+        tickVal <- unlist(strsplit(input$ticker, " "))
         
         
         # Gets the stocks with only past 10 years data
-        Stocks = lapply(ticker, function(tickVal) {
+        Stocks = lapply(tickVal, function(tick_single) {
             
             # Removing the missing values for stocks without 10 year data
-            na.omit(getSymbols(tickVal,auto.assign=FALSE,src="yahoo")[,4])
+            na.omit(getSymbols(tick_single,auto.assign=FALSE,src="yahoo")[,4])
             
         })
         
-        
-        # Calling back the stocks and removing the missing values
+        #removing na's for stocks which don't have 10 yr data
         x<-do.call(cbind, Stocks)
         df<-x[complete.cases(x), ]
         
-        # Changing the names of columns in DF
+        #changing colnames of df
         for(name in names(df)){
             colnames(df)[colnames(df)==name] <- strsplit(name,"\\.")[[1]][1]}
         
-        # New dataframe will have the closing prices of these stocks
         return(df)
-        
+        #returning df with closing prices of stocks
         
     })
     
@@ -150,14 +147,21 @@ server <- function(input,output){
         return(opt)
     })
     
-    
     wts<-reactive({
-    ``    
+        
         return(extractWeights(opt()))
         
     })
     
-
+    # 
+    # pf_weights<-reactive({
+    #   # Create pf_weights
+    #   pf_weights <- portfolio.optim(returns())$pw
+    #   
+    #   # Assign asset names
+    #   names(pf_weights) <- colnames(returns())
+    #   return(pf_weights)
+    # })
     
     #getting output using desired functions 
     
@@ -201,6 +205,7 @@ server <- function(input,output){
     )
     
 }
+
 
 # Run the application 
 shinyApp(ui = ui, server = server)
