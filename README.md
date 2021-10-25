@@ -19,7 +19,7 @@ It gives the user the following based on the tickers submitted
 
 #### DEMO
 
-![.gif](assets/PORT-OPT-VIDEO-DEMO.mp4)
+![gif](assets/PORT-OPT-VIDEO-DEMO.gif)
 
 Packages used:
 ```
