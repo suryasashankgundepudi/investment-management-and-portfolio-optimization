@@ -9,6 +9,13 @@
 Within this repository, I have included the source code for a Shiny Web Application which uses Perfomance Analytics and Quantmod to give a portfolio based on the 
 stocks a person wishes to invest in. It minimizes the Risk and its standard deviation to give a portfolio optimized on return of investment. 
 
+It gives the user the following based on the tickers submitted
+
+1. Risk over the past 10 years
+2. Optimized Weights for the portfolio
+3. Correlation among the stocks in the portfolio
+4. An Annualized table and visualization on the retuns of each stock in the portfolio
+
 
 Packages used:
 ```
