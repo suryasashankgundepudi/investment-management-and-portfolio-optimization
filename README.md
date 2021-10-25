@@ -17,6 +17,10 @@ It gives the user the following based on the tickers submitted
 4. An Annualized table and visualization on the retuns of each stock in the portfolio
 
 
+#### DEMO
+
+![](assets/read.me)
+
 Packages used:
 ```
 Shiny
