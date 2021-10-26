@@ -19,7 +19,6 @@ library(ROI.plugin.quadprog)
 
 
 
-# Define UI for application that gives the risk profile, portfolio and correlation
 ui <- fluidPage(
 
     #fluid page scales the components to fit on all browsers
