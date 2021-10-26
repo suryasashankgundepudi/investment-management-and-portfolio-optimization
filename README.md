@@ -17,7 +17,6 @@ It provedes the user with the following information based on the tickers submitt
 
 
 
-![](https://melmagazine.com/wp-content/uploads/2019/07/Stonks_Meme.jpg)
 
 Packages used:
 ```
@@ -33,4 +32,10 @@ ROI
 
 This project has been developed after I watched a youtube series on portfolio optimization with R and also started reading the book "Technical Analysis with R" by Ko Chin Yu
 
-In case the app is not active please contact me via email. 
+In case the app is not active please contact me via email.
+
+
+
+
+![](https://melmagazine.com/wp-content/uploads/2019/07/Stonks_Meme.jpg)
+
