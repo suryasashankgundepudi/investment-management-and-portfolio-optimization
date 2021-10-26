@@ -2,14 +2,13 @@
 
 ###### The application is hosted on ShinyApps.io and can be found [HERE](https://gv9wj.shinyapps.io/Risk-Management-and-Portfolio-Optimization/)
 
+#### DEMO
 
-![](https://g.foolcdn.com/editorial/images/618711/arrow-angles-up-on-a-green-stock-chart.jpg)
+![gif](assets/PORT-OPT-VIDEO-DEMO.gif)
 
 
-Within this repository, I have included the source code for a Shiny Web Application which uses Perfomance Analytics and Quantmod to give a portfolio based on the 
-stocks a person wishes to invest in. It minimizes the Risk and its standard deviation to give a portfolio optimized on return of investment. 
-
-It gives the user the following based on the tickers submitted
+Within this repository, I have included the source code for a Shiny Web Application that uses Perfomance Analytics and Quantmod to provide the user with an optimized portfolio based on the stocks given by the user.  The portfolio is optimized by reducing the standard deviation of risk, and increasing the return of investment, based on historical data.  
+It provedes the user with the following information based on the tickers submitted: 
 
 1. Risk over the past 10 years
 2. Optimized Weights for the portfolio
@@ -17,9 +16,8 @@ It gives the user the following based on the tickers submitted
 4. An Annualized table and visualization on the retuns of each stock in the portfolio
 
 
-#### DEMO
 
-![gif](assets/PORT-OPT-VIDEO-DEMO.gif)
+![](https://melmagazine.com/wp-content/uploads/2019/07/Stonks_Meme.jpg)
 
 Packages used:
 ```
