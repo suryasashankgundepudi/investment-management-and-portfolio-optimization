@@ -37,5 +37,3 @@ In case the app is not active please contact me via email.
 
 
 
-![](https://melmagazine.com/wp-content/uploads/2019/07/Stonks_Meme.jpg)
-
