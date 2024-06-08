@@ -6,15 +6,16 @@ library(ROI)
 library(ROI.plugin.quadprog)
 
 # Extract stock data based on user input
-get_stock_data <- function(ticker_input) {
+get_stock_data <- function(ticker_input, start_date, end_date) {
   tickers <- unlist(strsplit(ticker_input, " "))
   stock_data <- lapply(tickers, function(ticker) {
     tryCatch({
-      na.omit(getSymbols(ticker, auto.assign = FALSE, src = "yahoo")[,4])
+      na.omit(getSymbols(ticker, auto.assign = FALSE, src = "yahoo", from = start_date, to = end_date)[,4])
     }, error = function(e) NULL)
   })
   do.call(cbind, stock_data)
 }
+
 
 # Calculate returns
 calculate_returns <- function(stock_data) {
@@ -36,8 +37,8 @@ server <- function(input, output) {
   
   # Reactive expression for cleaned and merged stock data
   stock_data <- reactive({
-    req(input$ticker)  # Ensure that the ticker input is available
-    get_stock_data(input$ticker)
+    req(input$ticker, input$startDate, input$endDate)  # Ensure that the ticker and date inputs are available
+    get_stock_data(input$ticker, input$startDate, input$endDate)
   })
   
   # Reactive expression for stock returns

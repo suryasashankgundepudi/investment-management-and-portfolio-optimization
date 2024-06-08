@@ -17,6 +17,11 @@ ui <- fluidPage(
     sidebarPanel(
       # Input for Stock Tickers
       textInput("ticker", "Enter the tickers of desired stocks", value = "MSFT GOOG IBM"),
+      
+      # Add date inputs here
+      dateInput("startDate", "Select start date:", value = "2010-01-01", min = "2000-01-01", max = Sys.Date()),
+      dateInput("endDate", "Select end date:", value = Sys.Date(), min = "2000-01-01", max = Sys.Date()),
+      
       submitButton("Submit"),
       p("Kindly separate stock tickers with space.")
     ),
@@ -25,7 +30,7 @@ ui <- fluidPage(
     mainPanel(
       tabsetPanel(type = "tabs",
                   # Tab for Risk Analysis
-                  tabPanel("Risk over past 10 years",
+                  tabPanel("Risk over test date",
                            plotOutput("p1"),
                            h3("Statistics"),
                            p("Skewness"),
