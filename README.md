@@ -1,6 +1,6 @@
 # Investment Management and Portfolio Optimization using R Programming
 
-###### The application is hosted on ShinyApps.io and can be found [HERE](https://gv9wj.shinyapps.io/Risk-Management-and-Portfolio-Optimization/)
+###### The application is hosted on ShinyApps.io and can be found [HERE]([https://gv9wj.shinyapps.io/Risk-Management-and-Portfolio-Optimization/](https://gv9wj.shinyapps.io/Portfolio-Optimization-App/))
 
 #### DEMO
 
